@@ -1,0 +1,40 @@
+<div class="body">
+  <div id="content">
+    <div>
+      <ul>
+        {{#each recipes}}
+        {{#if showIngredients}}
+          <li>
+            <a href="/recipes/{{id}}"><img src="{{smallImagePath}}" alt="Image"></a>
+            <div>
+              <h3><a href="/recipes/{{id}}">{{title}}</a></h3>
+              <div>
+                <p>
+                  {{summary}}
+                </p>
+                <ul>
+                  {{#each Ingredients}}
+                  <li>
+                    {{title}}
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </li>
+        {{else}}
+        <li>
+          <a href="/recipes/{{id}}"><img src="{{smallImagePath}}" alt="Image"></a>
+          <div>
+            <h3><a href="/recipes/{{id}}">{{title}}</a></h3>
+            <p>
+              {{{summary}}}
+            </p>
+          </div>
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
